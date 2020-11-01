@@ -3,16 +3,20 @@ import ibadts.IBCollection;
 public class Main {
 
     public static void main(String[] args) {
-        final int limit = 40;
-        IBCollection<Integer> temps = new IBCollection<>();
-        temps.add(new Integer[]{19, 44, 76, 100});
-        temps.addItem(56);
+        final int limit = 2;
+        IBCollection <String> names = new IBCollection<>();
+        names.add (new String[] {"John", "Marie"});
         int count = 0;
-        while (temps.hasNext()) {
-            int t = temps.getNext();
-            if (t > limit)
-                count++;
+        while (names.hasNext()) {
+            String n = names.getNext();
+            if (count > limit)
+                count = count + 1;
         }
         System.out.println(count);
+
+
+
+        }
+
     }
-}
+
