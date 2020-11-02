@@ -3,17 +3,25 @@ import ibadts.IBCollection;
 public class Main {
 
     public static void main(String[] args) {
-        final int limit = 2;
-        IBCollection <String> names = new IBCollection<>();
-        names.add (new String[] {"John", "Marie"});
-        int count = 0;
-        while (names.hasNext()) {
-            String n = names.getNext();
-            if (count > limit)
-                count = count + 1;
-        }
-        System.out.println(count);
+        Integer[] nums = {45, 6, 17, 9, 4, 21};
+        IBCollection<Integer> values = new IBCollection<>();
+        values.add (nums);
+        values.resetNext ();
+        int largest = 0;
+        while (values.hasNext())
+        {
+            int v = values.getNext();
+            if (v > largest)
+                largest = v;
 
+        }
+        values.resetNext();
+        while (values.hasNext())
+        {
+            int v = values.getNext();
+            if (v < largest / 2)
+                System.out.println (v);
+        }
 
 
         }
